@@ -19,20 +19,22 @@ class _LocationInputState extends State<LocationInput> {
 
   String get locationImage {
     if (_pickedLocation == null) {
-      return ''; 
+      return '';
     }
-    return 'https://via.placeholder.com/600x300';  // Placeholder image
+    return 'https://via.placeholder.com/600x300'; // Placeholder image
   }
 
   Future<void> _savePlace(double latitude, double longitude) async {
-    setState(() {
-      _pickedLocation = PlaceLocation(
-        latitude: latitude,
-        longitude: longitude,
-        address: 'Default Address',  // Default or custom address
-      );
-      _isGettingLocation = false;
-    });
+    setState(
+      () {
+        _pickedLocation = PlaceLocation(
+          latitude: latitude,
+          longitude: longitude,
+          address: 'Default Address', // Default or custom address
+        );
+        _isGettingLocation = false;
+      },
+    );
     widget.onSelectLocation(_pickedLocation!);
   }
 

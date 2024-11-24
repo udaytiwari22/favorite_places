@@ -52,14 +52,17 @@ class UserPlacesNotifier extends StateNotifier<List<Place>> {
 
     final db = await _getDatabase();
 
-    db.insert('user_places', {
-      'id': newPlace.id,
-      'title': newPlace.title,
-      'image': newPlace.image.path,
-      'lat': newPlace.location.latitude,
-      'lng': newPlace.location.longitude,
-      'address': newPlace.location.address,
-    });
+    db.insert(
+      'user_places',
+      {
+        'id': newPlace.id,
+        'title': newPlace.title,
+        'image': newPlace.image.path,
+        'lat': newPlace.location.latitude,
+        'lng': newPlace.location.longitude,
+        'address': newPlace.location.address,
+      },
+    );
     state = [newPlace, ...state];
   }
 }

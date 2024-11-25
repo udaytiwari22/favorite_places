@@ -130,7 +130,7 @@ class _LocationInputState extends State<LocationInput> {
               label: const Text('Select on Map'),
             ),
           ],
-        )
+        ),
       ],
     );
   }

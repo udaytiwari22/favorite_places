@@ -32,7 +32,7 @@ class _PlacesScreenState extends ConsumerState<PlacesScreen> {
           IconButton(
             icon: const Icon(Icons.add),
             onPressed: () {
-              Navigator.of(context).push(  
+              Navigator.of(context).push(
                 MaterialPageRoute(builder: (ctx) => const AddPlaceScreen()),
               );
             },
@@ -40,15 +40,14 @@ class _PlacesScreenState extends ConsumerState<PlacesScreen> {
         ],
       ),
       body: Padding(
-        padding: const EdgeInsets.all(8.0),
-        child: FutureBuilder(
-          future: _placesFuture,
-          builder: (context, snapshot) =>
-              snapshot.connectionState == ConnectionState.waiting
-                  ? const Center(child: CircularProgressIndicator())
-                  : PlacesList(places: userPlaces),
-        ),
-      ),
+          padding: const EdgeInsets.all(8.0),
+          child: FutureBuilder(
+            future: _placesFuture,
+            builder: (context, snapshot) =>
+                snapshot.connectionState == ConnectionState.waiting
+                    ? const Center(child: CircularProgressIndicator())
+                    : PlacesList(places: userPlaces),
+          )),
     );
   }
 }

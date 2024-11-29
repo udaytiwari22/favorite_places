@@ -82,7 +82,7 @@ class _MapScreenState extends State<MapScreen> {
                   'Preview Location: ($_latitude, $_longitude)',
                   style:
                       TextStyle(color: Theme.of(context).colorScheme.onSurface),
-                ),
+                )
             ],
           )),
     );
